@@ -1,0 +1,27 @@
+<h1>Chat Room</h1>
+<hr>
+<form [formGroup]="form">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" formControlName="name" id="name" placeholder="Name">
+                <button type="button" (click)="toggleConnection()" [innerHTML]="text"></button>
+            </td>
+        </tr>
+        <tr>
+            <td>Message</td>
+            <td>
+                <input type="text" formControlName="message" id="message">
+                <button type="submit" (click)="sendMessage()">Send</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr>
+
+<h3>Chats</h3>
+<div *ngFor="let m of messages">
+    <code>{{ m.from }} </code>
+    <span>{{ m.message }}</span>
+</div>
